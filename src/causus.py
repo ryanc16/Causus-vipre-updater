@@ -29,7 +29,7 @@ DEFINITIONS_UPDATE_URL = "http://definitions.vipreantivirus.com"
 # The current user's home directory. The user running this script should have access to this directory
 USER_HOME = os.path.expanduser("~")
 # This will serve as the scripts workspace.
-SCRIPT_WORKSPACE = os.path.join(USER_HOME, ".vipre_updater")
+SCRIPT_WORKSPACE = os.path.join(USER_HOME, ".causus")
 # Definitions will be downloaded to a subdirectory in the script's workspace
 DEFINITIONS_PATH = os.path.join(SCRIPT_WORKSPACE, "defs")
 
