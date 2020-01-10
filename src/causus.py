@@ -42,6 +42,9 @@ LOG_FILE_HANDLE = None
 
 def main():
   success = False
+  # Set up the script's workspace environment if needed.
+  setup_workspace()
+  
   global LOG_FILE_HANDLE
   with open(LOG_FILE, 'w') as LOG_FILE_HANDLE:
     # Route stdout and stderr to the log file.
@@ -54,8 +57,6 @@ def main():
     global VIPRE_CLI_BIN
     VIPRE_CLI_BIN = determine_vipre_cli_directory()
 
-    # Set up the script's workspace environment if needed.
-    setup_workspace()
     # Scrape the download link, version, and md5 checksum for the most recent entry from the vipre definitions webpage.
     definitions_url, version, md5_checksum = scrape_latest_definitions()
     # Read the installed definitions version.
