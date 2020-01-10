@@ -130,17 +130,15 @@ def download_definitions(url:str):
 ##
 def apply_definitions()->bool:
 	# Run subprocess using vipre cli to apply the downloaded definitions, capturing the output in stdout and stderr
-	result = subprocess.run([VIPRE_CLI_BIN, "/applydefs", DEFINITIONS_SGNX_FILE], capture_output=True, encoding="utf-8")
-	if result.stdout is not None:
-		log(result.stdout)
-	if result.stderr is not None:
-		log(result.stderr)
-	if result.returncode == 0:
-		log("Definitions applied successfully!")
-		return True
-	else:
-		log("Failed to apply latest definitions file!")
-		return False
+  result = subprocess.run([VIPRE_CLI_BIN, "/applydefs", DEFINITIONS_SGNX_FILE], capture_output=True, encoding="utf-8")
+  if result.returncode == 0:
+    log(result.stdout)
+    log("Definitions applied successfully!")
+    return True
+  else:
+    log(result.stderr)
+    log("Failed to apply latest definitions file!")
+    return False
 
 ##
 #
